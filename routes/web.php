@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\ProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +34,6 @@ Route::middleware(['auth', 'verified'])
 ->prefix('admin') 
 ->name('admin.')
 ->group(function(){
-    Route::get('/dashboard', [DashboardController::class, 'home'])->name('dashboard');
     Route::resource('projects', ProjectController::class);
 });
 
