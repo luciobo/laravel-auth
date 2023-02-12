@@ -12,7 +12,7 @@ class ProjectController extends Controller
     {
         $project = Project::all();
 
-        return view("comics.index", [
+        return view("project.index", [
             "project" => $project
         ]);
     }
@@ -46,13 +46,13 @@ class ProjectController extends Controller
 
 
 
-        return redirect()->route("comics.show", $project->id);
+        return redirect()->route("project.show", $project->id);
     }
 
 
     public function show(Project $project)
     {
-        return view("comics.show", [
+        return view("project.show", [
             "project" => $project
         ]);
     }
@@ -60,7 +60,7 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        return view("comics.edit", [
+        return view("project.edit", [
             "project" => $project
             
         ]);
